@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Création d'un article |
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<div class="container mt-4">
+		<div class="card w-50 mx-auto p-3">
+			<h1 class="text-center">Création d'un article</h1>
+			{% include 'Backend/Articles/_form.html.twig' %}
+		</div>
+	</div>
+{% endblock %}

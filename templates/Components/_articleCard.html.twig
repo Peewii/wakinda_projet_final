@@ -23,7 +23,7 @@
 		</p>
 		<div class="d-flex justify-content-between">
 			<a href="{{ path('admin.articles.edit', {id: article.id}) }}" class="btn btn-warning">Modifier</a>
-
+			{% include 'Backend/Articles/_deleteForm.html.twig' %}
 		</div>
 	{% endif %}
 </div></div>

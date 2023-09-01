@@ -30,6 +30,15 @@ class ArticlesRepository extends ServiceEntityRepository
         }
     }
 
+    public function remove(Articles $entity, bool $flush = true): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
     //    /**
     //     * @return Articles[] Returns an array of Articles objects
     //     */

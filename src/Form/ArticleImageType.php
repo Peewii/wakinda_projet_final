@@ -13,7 +13,7 @@ class ArticleImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('image', VichImageType::class, [
+            ->add('imageFile', VichImageType::class, [
                 'label' => false,
                 'required' => false,
                 'allow_delete' => true,

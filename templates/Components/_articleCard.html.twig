@@ -22,7 +22,7 @@
 
 		</p>
 		<div class="d-flex justify-content-between">
-			<a href="#" class="btn btn-warning">Modifier</a>
+			<a href="{{ path('admin.articles.edit', {id: article.id}) }}" class="btn btn-warning">Modifier</a>
 
 		</div>
 	{% endif %}

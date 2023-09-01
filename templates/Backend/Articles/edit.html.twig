@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Admin Articles
+	Modification d'un article
 	{{ parent() }}
 {% endblock %}
 
@@ -15,15 +15,9 @@
 	{{ encore_entry_script_tags('admin') }}
 {% endblock %}
 
-
 {% block body %}
 	<section class="container mt-4">
-		<h1 class="text-center">Administration des articles</h1>
-		<a href="{{ path('admin.articles.create') }}" class="btn btn-primary mt-4">Créer un article</a>
-		<div class="blog-list mt-4">
-			{% for article in articles %}
-				{% include 'Components/_articleCard.html.twig' %}
-			{% endfor %}
-		</div>
+		<h1 class="text-center">{{ 'article.admin.heading.edit'|trans(domain="content") }}</h1>
+		{% include 'Backend/Articles/_form.html.twig' with { buttonLabel: 'Modifier' } %}
 	</section>
 {% endblock %}

@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticlesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\User;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticlesRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ArticlesRepository::class)]
 class Articles
@@ -37,7 +38,7 @@ class Articles
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $user = null;
+    private ?User $user = null;
 
     #[ORM\OneToMany(mappedBy: 'article', targetEntity: ArticleImages::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $images;

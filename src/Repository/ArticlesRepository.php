@@ -38,6 +38,17 @@ class ArticlesRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function findLatestArticles(int $limit): array
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a', 'u', 'i')
+            ->innerJoin('a.user', 'u')
+            ->leftJoin('a.images', 'i')
+            ->setMaxResults($limit)
+            ->orderBy('a. date_publication', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 
     //    /**
     //     * @return Articles[] Returns an array of Articles objects

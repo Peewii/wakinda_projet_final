@@ -1,5 +1,18 @@
+// Import variables
+@import "./_variables.scss";
+
 // Import Bootstrap
 @import "~bootstrap/scss/bootstrap";
 // Import Bs Icons
 @import "~bootstrap-icons/font/bootstrap-icons.scss";
 
+// Import structure
+@import './_structure.scss';
+
+// Import mixins
+@import "./_mixins.scss";
+
+
+
+// Import home style
+@import "./Frontend/Home/_banner.scss";

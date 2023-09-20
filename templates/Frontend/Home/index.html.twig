@@ -8,12 +8,29 @@
 {% block body %}
 	{% include 'Frontend/Home/_banner.html.twig' %}
 	<section class="container mt-4 position-relative">
-		<h1 class="text-center">Nos derniers Articles</h1>
-		<a href="#" class="btn btn-primary position-absolute top-0 left-0">Voir les articles</a>
-		<div class="blog-list mt-4">
-			{% for article in articles %}
-				{% include 'Components/_articleCard.html.twig' %}
-			{% endfor %}
-		</div>
+
+		<section class="container mt-4 position-relative">
+			<h1 class="text-center">Qui sommes-nous?</h1>
+			<div class="presentation container mt-4 position-relative text-center">
+				<div class="content_p container mt-4 position-relative text-center">
+					<p>Wakinda Project est une organisation à but non lucratif qui a pour objectif le renforcement et la création de nouveaux échanges entre le Cameroun et l'Europe. Notre but premier est d'améliorer les conditions de travail et de vie des agriculteurs / agricultrices du Cameroun par la création d'un système de redistribution équitable pour tous.</p>
+				</div>
+				<div class="content_p2 container mt-4 position-relative text-center">
+					<b>« Le développement durable et la conservation des terroirs par la jeunesse rurale »</b>
+					<p>A travers l'échange et la transmission des savoirs, ce projet collectif vise donc au développement de plusieurs villages de la Région de l’Est Cameroun, via des activités agricoles et pastorales, génératrices d’emplois et de revenus.</p>
+				</div>
+			</div>
+
+
+		</section>
+		<section class="container mt-4 position-relative">
+			<h2 class="text-center">Nos derniers Articles</h2>
+			<a href="{{ path('admin.articles.index') }}" class="btn btn-primary position-absolute top-0 left-0">Voir les articles</a>
+			<div class="blog-list mt-4">
+				{% for article in articles %}
+					{% include 'Components/_articleCard.html.twig' %}
+				{% endfor %}
+			</div>
+		</section>
 	</section>
 {% endblock %}

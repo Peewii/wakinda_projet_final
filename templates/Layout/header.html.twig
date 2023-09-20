@@ -1,17 +1,17 @@
 <header class="sticky-top">
 	<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">My First App Symfony</a>
+			<a class="navbar-brand" href="{{ path('app.homepage') }}">Wakinda</a>
 			<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavId">
 				<ul class="navbar-nav me-auto mt-2 mt-lg-0">
 					<li class="nav-item">
-						<a class="nav-link {{ app.request.get('_route') == 'app.homepage' ? 'active' }}" href="#">Home</a>
+						<a class="nav-link {{ app.request.get('_route') == 'app.homepage' ? 'active' }}" href="{{ path('app.homepage') }}">Accueil</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link {{ app.request.get('_route') == 'app.articles.index' ? 'active' }}" href="#">Articles</a>
+						<a class="nav-link {{ app.request.get('_route') == 'app.articles.index' ? 'active' }}" href="app.index">Articles</a>
 					</li>
 				</ul>
 				<div class="navbar-nav ms-auto">
@@ -30,8 +30,8 @@
 						{% endif %}
 						<a href="#" class="btn btn-danger text-light">Se deconnecter</a>
 					{% else %}
-						<a href="#" class="btn btn-primary me-2">S'inscrire</a>
-						<a href="#" class="btn btn-light">Se connecter</a>
+						<a href="{{ path('app.register') }}" class="btn btn-primary me-2">S'inscrire</a>
+						<a href="{{ path('app.login') }}" class="btn btn-light">Se connecter</a>
 					{% endif %}
 				</div>
 			</div>

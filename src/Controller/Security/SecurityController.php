@@ -2,6 +2,7 @@
 
 namespace App\Controller\Security;
 
+use index;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
@@ -14,6 +15,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class SecurityController extends AbstractController
 {
+
+
     #[Route('/login', name: 'login')]
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
@@ -27,7 +30,7 @@ class SecurityController extends AbstractController
         ]);
     }
 
-    #[Route('/register', name: 'register')]
+    #[Route('/register', name: 'app.register')]
     public function register(
         Request $request,
         UserPasswordHasherInterface $passwordEncoder,
